@@ -1,11 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, Navigator } from 'react-native';
 import Background from '../Components/Background';
-import { Button } from 'react-native-elements';
-import { LinearGradient } from 'expo';
-import ListaSvg from '../Components/UI/Svg/ListaSvg'
-import SacolaSvg from '../Components/UI/Svg/SacolaSvg'
-export default class Home extends React.Component {
+import CardsProducts from '../Components/Cards/CardsProducts'
+export default class BuyIetns extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -15,15 +12,10 @@ export default class Home extends React.Component {
         <Background style={styles.imagemTop}></Background>
         <View style={styles.fundoInferior}>
           <View style={styles.cardTop}>
-            <Text>Same here</Text>
+            <CardsProducts/>
           </View>
-          <View style={styles.cardButton}>
-            <LinearGradient colors={['#FC7950', '#FF5F6D']} style={styles.button}>
-              <Button onPress={()=> this.props.navigation.push('ListItens')} type="clear" icon={<ListaSvg/>} />
-            </LinearGradient>
-            <LinearGradient colors={['#FC7950', '#FF5F6D']} style={styles.button}>
-              <Button onPress={()=> this.props.navigation.push('BuyItens')} type="clear" icon={<SacolaSvg/>} />
-            </LinearGradient>
+          <View style={styles.total}>
+            <Text>Total: R$1000</Text>
           </View>
         </View>
       </View>
@@ -60,21 +52,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  cardButton: {
-    flexDirection: 'row',
-    width: '75%',
-    height: '30%',
-    backgroundColor: '#FFF',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    top: '55%'
-  },
-  button: {
-    width: '45%',
-    height: '100%',
-    alignItems: 'center',
+  total:{
+    width: '100%',
+    height: 54,
+    backgroundColor: '#ccc',
     justifyContent: 'center',
-    borderRadius: 10
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 0,
   }
-
 });

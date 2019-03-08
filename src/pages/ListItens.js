@@ -5,7 +5,7 @@ import { Button } from 'react-native-elements';
 import { LinearGradient } from 'expo';
 import ListaSvg from '../Components/UI/Svg/ListaSvg'
 import SacolaSvg from '../Components/UI/Svg/SacolaSvg'
-export default class Home extends React.Component {
+export default class ListIetns extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -17,13 +17,8 @@ export default class Home extends React.Component {
           <View style={styles.cardTop}>
             <Text>Same here</Text>
           </View>
-          <View style={styles.cardButton}>
-            <LinearGradient colors={['#FC7950', '#FF5F6D']} style={styles.button}>
-              <Button onPress={()=> this.props.navigation.push('ListItens')} type="clear" icon={<ListaSvg/>} />
-            </LinearGradient>
-            <LinearGradient colors={['#FC7950', '#FF5F6D']} style={styles.button}>
-              <Button onPress={()=> this.props.navigation.push('BuyItens')} type="clear" icon={<SacolaSvg/>} />
-            </LinearGradient>
+          <View style={styles.total}>
+            <Text>Total: R$1000</Text>
           </View>
         </View>
       </View>
@@ -60,21 +55,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  cardButton: {
-    flexDirection: 'row',
-    width: '75%',
-    height: '30%',
+  total:{
+    width: '100%',
+    height: 50,
     backgroundColor: '#FFF',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    top: '55%'
-  },
-  button: {
-    width: '45%',
-    height: '100%',
-    alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 0,
   }
-
 });
