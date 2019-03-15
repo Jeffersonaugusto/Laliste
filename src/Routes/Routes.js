@@ -2,7 +2,7 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 import Main from '../pages/Main'
 import Home from '../pages/Home'
 import BuyItens from '../pages/BuyItens'
-import ListItens from '../pages/ListItens'
+import Section from '../pages/Section'
 
 
 const RootStack = createStackNavigator(
@@ -17,11 +17,11 @@ const RootStack = createStackNavigator(
           screen: BuyItens,
         },
         ListItens:{
-          screen: ListItens,
+          screen: Section,
         },
     },    
     {
-      initialRouteName: 'BuyItens',
+      initialRouteName: 'Main',
     }
   );
   
