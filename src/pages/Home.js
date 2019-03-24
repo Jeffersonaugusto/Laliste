@@ -18,7 +18,7 @@ export default class Home extends React.Component {
             <Text>Same here</Text>
           </View>
           <View style={styles.cardButton}>
-            <LinearGradient colors={['#FC7950', '#FF5F6D']} style={styles.button}>
+            <LinearGradient colors={['#FC79FF', '#FF5F6D']} style={styles.button}>
               <Button onPress={()=> this.props.navigation.push('ListItens')} type="clear" icon={<ListaSvg/>} />
             </LinearGradient>
             <LinearGradient colors={['#FC7950', '#FF5F6D']} style={styles.button}>
