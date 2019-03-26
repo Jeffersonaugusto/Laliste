@@ -14,9 +14,9 @@ export default class Section extends React.Component {
     return (
       <View style={styles.container}>
         <Background style={styles.imagemTop}></Background>
-        <View style={styles.fundoInferior}>
+
             <ListSection/>
-        </View>
+    
       </View>
     );
   }
@@ -29,11 +29,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '30%'
   },
-  fundoInferior: {
-    position: 'relative',
-    width: '100%',
-    height: '65%',
-    alignItems: 'center',
-  },
+
  
 });

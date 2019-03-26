@@ -19,13 +19,13 @@ const styles = StyleSheet.create({
     flex: 1,
 
     width: '100%',
-    height: '50%',
-    backgroundColor: '#FFF',
+    height: '100%',
+    backgroundColor: '#0F0',
     },
 
     button: {
         width: '100%',
-        height: '50%',
+        height: '100%',
 
         borderRadius: 10
     }

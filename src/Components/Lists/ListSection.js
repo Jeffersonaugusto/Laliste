@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet, FlatList} from 'react-native';
 import{connect} from 'react-redux'
 import { bindActionCreators } from 'redux';
 import {fetchCategorias} from '../../Actions'
@@ -8,7 +8,7 @@ import ItemSection from './ItemSection';
 class ListSection extends React.Component {
     componentDidMount(){
         //chama action creatorpara pegar a lista
-        this.props.fetchCategorias()
+   categorias = this.props.fetchCategorias()
     }
     render() {
         if(!this.props.categorias){
@@ -18,14 +18,15 @@ class ListSection extends React.Component {
             </View>
             );
         }    
-        const secao = this.props.categorias.map(categorias =>{
-            return <ItemSection key={categorias.nome} item={categorias}/>
 
-        })
         return (
-      
             <View style={styles.container}>
-               {secao}
+            <FlatList 
+            data={ this.props.categorias}
+            keyExtractor={item=> item.nome}
+            renderItem={({ item }) =>  <ItemSection key={item.nome} item={item}/>}
+          />
+
             </View>
 
         );
@@ -41,14 +42,9 @@ const mapDispacthToProps =(dispatch) =>{
 const styles = StyleSheet.create({
     container: {
     flex: 1,
-    flexDirection: 'row',
-    
     width: '100%',
-    height: '100%',
-    alignItems: 'flex-start',
-    justifyContent: 'space-around',
-    backgroundColor: '#000',
-    flexWrap:'wrap',
+    height: '100%',  
+
     },
 })    
 export default connect(mapStateToProps, mapDispacthToProps)(ListSection)
